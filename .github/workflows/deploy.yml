@@ -61,3 +61,4 @@ jobs:
         run: |
           kubectl set image deployment/iris-api iris-api=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:${{ github.sha }} || \
           kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/hpa.yaml
